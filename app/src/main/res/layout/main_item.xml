@@ -17,7 +17,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@mipmap/ic_launcher"
-            android:layout_centerVertical="true"
+
             android:id="@+id/img1"
             app:civ_border_width="2dp"
             app:civ_border_color="#FF000000"/>
@@ -54,6 +54,26 @@
             android:layout_toRightOf="@id/img1"
             android:layout_below="@id/txtcourse"
             android:layout_marginLeft="10dp"/>
+        <LinearLayout
+            android:layout_below="@id/txtemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="173dp"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:textAllCaps="false"
+                android:layout_marginRight="5dp"
+                android:id="@+id/btnedit"/>
+            <Button
+                android:layout_width="173dp"
+                android:layout_height="wrap_content"
+                android:text="Dekete"
+                android:textAllCaps="false"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/btndlt"/>
+        </LinearLayout>
 
     </RelativeLayout>
 
