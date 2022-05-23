@@ -30,8 +30,21 @@ public class MainActivity extends AppCompatActivity {
                         .build();
 
         adapter = new Adapter(options);
-        //recyclerView.setAdapter();
+        recyclerView.setAdapter(adapter);
 
 
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 }
