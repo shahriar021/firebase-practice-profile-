@@ -24,6 +24,7 @@ import com.orhanobut.dialogplus.ViewHolder;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -85,8 +86,8 @@ public class Adapter extends FirebaseRecyclerAdapter<MainModel,Adapter.myviewhol
                         map.put("email",email.getText().toString());
                         map.put("imge",surl.getText().toString());
 
-                        FirebaseDatabase.getInstance().getReference().child("student")
-                                .child(getRef(holder.getAdapterPosition()).getKey()).updateChildren(map)
+                        FirebaseDatabase.getInstance().getReference().child("teachers")
+                                .child(Objects.requireNonNull(getRef(holder.getAbsoluteAdapterPosition()).getKey())).updateChildren(map)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
@@ -119,7 +120,7 @@ public class Adapter extends FirebaseRecyclerAdapter<MainModel,Adapter.myviewhol
                 builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        FirebaseDatabase.getInstance().getReference().child("student")
+                        FirebaseDatabase.getInstance().getReference().child("teachers")
                                 .child(getRef(holder.getAdapterPosition()).getKey()).removeValue();
                     }
                 });

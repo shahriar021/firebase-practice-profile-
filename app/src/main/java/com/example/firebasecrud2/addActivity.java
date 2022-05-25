@@ -57,7 +57,7 @@ public class addActivity extends AppCompatActivity {
         map.put("email",email.getText().toString());
         map.put("surl",surl.getText().toString());
 
-        FirebaseDatabase.getInstance().getReference().child("students").push()
+        FirebaseDatabase.getInstance().getReference().child("teachers").push()
                 .setValue(map)
                 .addOnSuccessListener(new OnSuccessListener<Void>(){
 
